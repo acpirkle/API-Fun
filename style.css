@@ -1,0 +1,25 @@
+#googlemaps{
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: 0;
+  position:absolute;;
+}
+#hoverAddressBar{
+  position: relative;
+  z-index: 2;
+  height: 100px;
+  width: 200px;
+  opacity: .60;
+  background-color: grey;
+  color: white;
+}
+#hoverAddressBar input[type="text"] {
+  background-color: black;
+  color: white;
+}
+#hoverAddressBar input[type="submit"] {
+  background-color: black;
+  color:red;
+}
