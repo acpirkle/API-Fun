@@ -4,11 +4,12 @@
   top:0;
   left:0;
   z-index: 0;
-  position:absolute;;
+  position:absolute;
 }
 #hoverAddressBar{
   position: relative;
-  z-index: 2;
+  float: left;
+  z-index: 1;
   height: 100px;
   width: 200px;
   opacity: .60;
@@ -20,6 +21,24 @@
   color: white;
 }
 #hoverAddressBar input[type="submit"] {
+  background-color: black;
+  color:red;
+}
+#addplaces{
+  position: relative;
+  float: right;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+  opacity: .60;
+  background-color: grey;
+  color: white;
+}
+#addplaces input[type="text"] {
+  background-color: black;
+  color: white;
+}
+#addplaces input[type="submit"] {
   background-color: black;
   color:red;
 }

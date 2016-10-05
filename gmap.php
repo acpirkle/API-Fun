@@ -12,7 +12,6 @@
 
   <script type="text/javascript">
 // create map
-
   $(document).ready(function(){
       var map = new GMaps({
         div: '#googlemaps',
@@ -90,6 +89,20 @@
 </div>
 
 <div id="googlemaps"></div>
+
+<div id="addplaces" >
+  <p> <b>Add your places</b> </p>
+  <form class="places" id="places_form" method="post">
+    <label for="placename">Name:</label>
+      <input type="text" id="placename" name="placename" />
+    <label for="placeaddress"> Address:</label>
+      <input type="text" id="placeaddress" name="placeaddress" />
+    <label for="placedescipt">Description: </label>
+      <input type="text" id="placedescript" name="placedescript" />
+
+      <input type="submit" value="ADD" />
+  </form>
+</div>
 
 </body>
 </html>
