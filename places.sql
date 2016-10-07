@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 07, 2016 at 06:53 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost
+-- Generation Time: Oct 07, 2016 at 10:51 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,7 +39,14 @@ CREATE TABLE `placestable` (
 --
 
 INSERT INTO `placestable` (`name`, `address`, `descript`, `lat`, `lng`) VALUES
-('Hancock Home', '500+W+Inaha+rd.+Sycamore+ga', 'merritt house', '31.6204287', '-83.6012539');
+('Old Fort Jackson', '1+Fort+Jackson+Rd%2C+Savannah%2C+GA+31404', 'an old fort in Savannah I want to go to', '32.0812292', '-81.0366154'),
+('Gym', '1657+Carpenter+Rd+S%2C+Tifton%2C+GA+31793', 'my gym', '31.4464970', '-83.5467867'),
+('Home', '2445+honeysuckle+rd+sycamore+ga', 'my house', '31.6661810', '-83.5731400'),
+('Hancock home', '500+w+inaha+rd+sycamore+ga', 'merrits house', '31.6204287', '-83.6012539'),
+('Oatland Island Wildlife Center of Savannah', '711+Sandtown+Rd%2C+Savannah%2C+GA+31410', 'Compact, zoo-like preserve with dozens of species in natural habitats, plus education programs.', '32.0491590', '-81.0244997'),
+('cool estate in Savannah', '7601+Skidaway+Rd%2C+Savannah%2C+GA+31406', 'Historic site featuring the ruins of a Colonial estate, gardens, trails & an oak-lined driveway', '31.9801627', '-81.0692671'),
+('Statue of Liberty', 'Liberty+Island++New+York%2C+NY+10004', 'That green lady with the torch', '40.6897580', '-74.0451380'),
+('Tifton ', 'Tifton+Ga+', 'where i spend most of my time', '31.4504629', '-83.5084973');
 
 --
 -- Indexes for dumped tables
@@ -49,7 +56,8 @@ INSERT INTO `placestable` (`name`, `address`, `descript`, `lat`, `lng`) VALUES
 -- Indexes for table `placestable`
 --
 ALTER TABLE `placestable`
-  ADD UNIQUE KEY `address` (`address`);
+  ADD UNIQUE KEY `address` (`address`),
+  ADD UNIQUE KEY `address_2` (`address`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
