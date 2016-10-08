@@ -9,7 +9,7 @@ $conn = new mysqli("localhost","root","password","places");
 // if searchbox is set search for the keyword in the database else display all markers
 if (isset($_GET['searchbox']) && $_GET['searchbox'] !='') {
   $key = $_GET['searchbox'];
-  $sql = "SELECT * FROM placestable WHERE description LIKE '%$key%'";
+  $sql = "SELECT * FROM placestable WHERE descript LIKE '%$key%' ";
   $_GET = '';
 }
 else {
