@@ -90,8 +90,8 @@ $howbig = count($sqlArray);
 
       for ($x=0; $x < $howbig; $x++) {
           echo "map.addMarker({\n";
-          echo "lat:".sqlArray[$x]['lat'].",\n";
-          echo "lng:".sqlArray[$x]['lng'].",\n";
+          echo "lat:".$sqlArray[$x]['lat'].",\n";
+          echo "lng:".$sqlArray[$x]['lng'].",\n";
           echo "title: '".$sqlArray[$x]['name']."',\n";
           echo "infoWindow: {\n";
           echo "content: '<p>".$sqlArray[$x]['descript']."</p>' }\n";
@@ -108,7 +108,7 @@ $howbig = count($sqlArray);
 <body>
 <?php $errormsg="" ?>
 
-<!-- <div id="googlemaps"></div> -->
+<div id="googlemaps"></div>
 
 <div id="addplaces" >
   <h4 style="text-align: center;"> <b>Add your places</b> </h4>
