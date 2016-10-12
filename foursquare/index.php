@@ -1,38 +1,13 @@
 <html>
 <head>
 <title>Search 4Square</title>
-
+<?php require('searchFS.php') ?>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCZdhbVuSEaqMWfsZroA-FLJIg-9-Jxh-U"></script>
  <script type="text/javascript" src="gmaps.js"></script>
-
-<?php
-$client_id = 'QUJM5BB4411C4YCXWRTHPGOA0EK1RWI5N1Y35RGZ2WD1NTBG';
-$client_secret = '0JJ23YB5HZGU14DZXF42J4NNHTEK1KB0QXJ1AXGITAVQBGX4';
-
-if (isset($_GET['query'],$_GET['near'],$_GET['radius'])) {
-  if ($_GET['query']&&$_GET['near']&&$_GET['radius']!="") {
-$url = 'https://api.foursquare.com/v2/venues/search'; //set the resource link
-//set Get parameters
-$url .= '?query='.urlencode($_GET['query']);
-$url .= '&near='.urlencode($_GET['near']);
-$url .= '&radius='.$_GET['radius'];
-$url .= '&client_id='.$client_id;
-$url .= '&client_secret='.$client_secret;
-$url .= '&v='.date("Ymd"); //specify today's date
-
-$file = file_get_contents($url);
-$data = json_decode($file,true);
-$items = $data['response']['venues'];
-$size = count($items);
-
-//for searching array
-// echo "<pre>";
-// print_r($data);
-// echo "</pre>";
-}
-}
-?>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="foursquare.css" type="text/css">
 
 <script type="text/javascript">
 // create map
@@ -76,26 +51,19 @@ $size = count($items);
 
 
 
+<div class="foursquareSearch form-group">
+  <form action="" method="get">
+    <label for="query">Keyword:</label>
+      <input type="text" class="form-control" name="query" id="query"/><br/>
+    <label for="near">Near:</label>
+      <input type="text" class="form-control" name="near" id="near"/><br/>
+    <label for="radius">Radius (< 100,000 meters):</label>
+      <input type="text"  class="form-control" name="radius"  id="radius"/><br/>
+      <input type="submit" class="btn btn-default" value="Search (Foursquare API)"/>
+    </form>
+</div>
 
-<form action="" method="get">
-
-
-  <br>Keyword:
-	<input type="text" name="query"  style="width: 200px; height: 19px">
-<br>Near:
-<input type="text" name="near"  style="width: 200px; height: 19px">
-
-<br> Radius (<100,000 meters):
-<input type="text" name="radius"  style="width: 150px; height: 19px">
-
-<br>
-
-<input type="submit" value="Search (Foursquare API)"  style="width: 246px; height: 40px" />
-
-
-</form>
-
-<div id="map" style="width: 1019px; height: 622px"></div>
+<div class="map container" id="map"></div>
 
 
 </body>
