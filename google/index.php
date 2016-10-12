@@ -34,7 +34,7 @@ $howbig = count($sqlArray);
 <html>
 
 <head>
-    <title> Google Maps API fun </title>
+    <title> My Favorite Places </title>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCZdhbVuSEaqMWfsZroA-FLJIg-9-Jxh-U"></script>
   <script type="text/javascript" src="gmaps.js"></script>
