@@ -1,6 +1,6 @@
 <?php
-$client_id = 'QUJM5BB4411C4YCXWRTHPGOA0EK1RWI5N1Y35RGZ2WD1NTBG';
-$client_secret = '0JJ23YB5HZGU14DZXF42J4NNHTEK1KB0QXJ1AXGITAVQBGX4';
+$client_id = '***';
+$client_secret = '***';
 
 if (isset($_GET['query'],$_GET['near'],$_GET['radius'])) {
   if ($_GET['query']&&$_GET['near']&&$_GET['radius']!="") {
