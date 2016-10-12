@@ -21,18 +21,37 @@
       <?php
       if ($_GET['query']&&$_GET['near']&&$_GET['radius']!="") {
           foreach ($items as $item) {
+            if (isset($item['location']['address'])) {
+              $address = $item['location']['address'];
+            }
+            else {
+              $address = "";
+            }
+            if (isset($item['contact']['twitter'])) {
+              $twit = $item['contact']['twitter'];
+            }
+            else {
+              $twit = "";
+            }
+            if (isset($item['contact']['facebook'])) {
+              $fbook = $item['contact']['facebook'];
+            }
+            else {
+              $fbook = "";
+            }
             echo "map.addMarker({\n";
             echo "lat:".$item['location']['lat'].",\n";
             echo "lng:".$item['location']['lng'].",\n";
             echo "title: '".addslashes($item['name'])."',\n";
             echo "infoWindow: {\n";
             echo "content: \n";
-            // echo "'<p>place id: ".$item['id']."</p>'\n";
-            echo " '<p>name: ".addslashes($item['name'])."</p>'\n";
-            // echo " '<p>checkinsCount: ".$item['stats']['checkinsCount']."</p>'\n";
-            // echo " '<p>address: ".addslashes($item['location']['address'])."</p>'\n";
-            // echo " '<p>".$item['contact']['twitter']."</p>'\n";
-            // echo " '<p>".$item['contact']['facebook']."</p>'\n";
+            echo " '<p>name: ".addslashes($item['name']).
+            "<br/>"."place id: ".$item['id'].
+            "<br/>"."checkinsCount: ".$item['stats']['checkinsCount'].
+            "<br/>"."address: ".addslashes($address).
+            "<br/>"."twitter: @".$twit.
+            "<br/>"."facebook: (facebook.com/)".$fbook.
+            "</p>'\n";
             echo " }\n";
             echo "});\n";
           }
