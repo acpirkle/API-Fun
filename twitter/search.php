@@ -4,10 +4,10 @@ require('index.html');
 
 //Set access tokens
 $settings = array(
-  'oauth_access_token' => "1242652957-2h0CyR3Ui4uzaw8oG2j4pkicjQK3SWNpwdC5uT1",
-  'oauth_access_token_secret' => "3eDZCVXcDSwLVn2qLaHYh7AYgMLZRLaAAwpD5CsT2mTmt",
-  'consumer_key' => "qe7CwUh28yMrK9mMiwlmVDnMv",
-  'consumer_secret' => "6NXwfbPgnrUrhddr639VWYjQPHO5q8PlZAXHrXYsN8f3CUb2in"
+  'oauth_access_token' => "***",
+  'oauth_access_token_secret' => "***",
+  'consumer_key' => "***",
+  'consumer_secret' => "***"
 );
 
 //URL and Request Method
